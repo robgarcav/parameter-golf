@@ -13,4 +13,4 @@ QK_GAIN_INIT="$QK_GAIN_INIT" \
 TTT_ENABLED="$TTT_ENABLED" \
 TTT_LR="$TTT_LR" \
 TTT_EPOCHS="$TTT_EPOCHS" \
-  torchrun --standalone --nproc_per_node="$NPROC_PER_NODE" train_gpt.py
+  python -m torch.distributed.run --standalone --nproc_per_node="$NPROC_PER_NODE" train_gpt.py
